@@ -16,15 +16,11 @@ bot.onText(/\/start/, function (msg, match) {
 })
 
 bot.on('message', function (msg) {
-    let data = msg.text.split(',')
-    let citta = data[0].toUpperCase()
-    let addr = data[1]
-    console.log(citta)
-    console.log(addr)
+    let citta = msg.text.toUpperCase()
     let messaggio = "Scegli il *tipo* di carburante che ti interessa:"
     let msg_options = {
         reply_markup: JSON.stringify({inline_keyboard: [
-            [{text:'⛽ Benzina', callback_data: `Benzina,${citta},${addr}`},{text:'⛽ Blue Super', callback_data: "Blue Super,"+citta}],
+            [{text:'⛽ Benzina', callback_data: `Benzina,${citta}`},{text:'⛽ Blue Super', callback_data: "Blue Super,"+citta}],
             [{text:'⛽ Gasolio', callback_data: "Gasolio,"+citta },{text:'⛽ Blue Diesel', callback_data: "Blue Diesel,"+citta }],
             [{text:'⛽ Metano', callback_data: "Metano,"+citta},{text:'⛽ GPL', callback_data: "GPL,"+citta}]
         ]}),
@@ -37,6 +33,7 @@ bot.on('callback_query', function (msg) {
     bot.answerCallbackQuery(msg.id, 'Caricamento...', false);
 
     let data = msg.data.split(',')
+    console.log(data)
 
     if (data[0]=="0"){ //mappa
         let lat = msg.data.split(',')[1]

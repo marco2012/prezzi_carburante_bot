@@ -11,5 +11,14 @@
   "dependencies": {
     "node-telegram-bot-api": "^0.30.0",
     "sqlite3": "^3.1.13"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marco2012/prezzi_carburante_bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marco2012/prezzi_carburante_bot/issues"
+  },
+  "homepage": "https://github.com/marco2012/prezzi_carburante_bot#readme"
 }
