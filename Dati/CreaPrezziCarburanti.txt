@@ -1,0 +1,26 @@
+-->>>>>>> !!! Substitute <BASE_PATH> with the right path in your environment: for example /var/www/html/Telegram !!! <<<<<<
+
+CREATE TABLE anagrafica_impianti_attivi(
+  idImpianto TEXT,
+  Gestore TEXT,
+  Bandiera TEXT,
+  TipoImpianto TEXT,
+  NomeImpianto TEXT,
+  Indirizzo TEXT,
+  Comune TEXT,
+  Provincia TEXT,
+  Latitudine DOUBLE,
+  Longitudine DOUBLE
+);
+CREATE TABLE prezzo_alle_8(
+  idImpianto TEXT,
+  descCarburante TEXT,
+  prezzo TEXT,
+  isSelf TEXT,
+  dtComu TEXT
+);
+.mode csv
+.separator ;
+.import /Users/marco/GitHub_Projects/DistributoriBot/Dati/anagrafica.csv anagrafica_impianti_attivi
+.import /Users/marco/GitHub_Projects/DistributoriBot/Dati/prezzo.csv prezzo_alle_8
+.quit
