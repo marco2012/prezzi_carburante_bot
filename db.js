@@ -7,7 +7,6 @@ exports.search = function(data, callback){
     let carburante = data[0]
     let citta = data[1]
     let addr = (data[2]=='null') ? null : data[2].toLowerCase()
-    console.log(data)
 
     let query =
     `SELECT DISTINCT NomeImpianto, descCarburante, prezzo, Indirizzo, Latitudine, Longitudine
@@ -29,7 +28,6 @@ exports.search = function(data, callback){
             }
         });
     }
-
 
     // close the database connection
     db.close();

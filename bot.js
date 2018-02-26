@@ -23,9 +23,9 @@ bot.on('message', function (msg) {
     let messaggio = "Scegli il *tipo* di carburante che ti interessa:"
     let msg_options = {
         reply_markup: JSON.stringify({inline_keyboard: [
-            [{text:'⛽ Benzina', callback_data: `Benzina,${citta},${addr}`},{text:'⛽ Blue Super', callback_data: "Blue Super,"+citta}],
-            [{text:'⛽ Gasolio', callback_data: `Gasolio,${citta},${addr}` },{text:'⛽ Blue Diesel', callback_data: "Blue Diesel,"+citta }],
-            [{text:'⛽ Metano', callback_data: "Metano,"+citta},{text:'⛽ GPL', callback_data: "GPL,"+citta}]
+            [{text:'⛽ Benzina', callback_data: `Benzina,${citta},${addr}`},{text:'⛽ Blue Super', callback_data: `Blue Super,${citta},${addr}`}],
+            [{text:'⛽ Gasolio', callback_data: `Gasolio,${citta},${addr}` },{text:'⛽ Blue Diesel', callback_data: `Blue Diesel,${citta},${addr}` }],
+            [{text:'⛽ GPL', callback_data: `GPL,${citta},${addr}`},{text:'⛽ Metano', callback_data: `Metano,${citta},${addr}`}]
         ]}),
         parse_mode : "markdown"
     };
