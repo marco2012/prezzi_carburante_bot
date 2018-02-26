@@ -36,7 +36,6 @@ bot.on('callback_query', function (msg) {
     bot.answerCallbackQuery(msg.id, 'Caricamento...', false);
 
     let data = msg.data.split(',')
-    // console.log(data)
 
     if (data[0]=="0"){ //mappa
         let lat = msg.data.split(',')[1]

@@ -7,6 +7,7 @@ exports.search = function(data, callback){
     let carburante = data[0]
     let citta = data[1]
     let addr = (data[2]=='null') ? null : data[2].toLowerCase()
+    console.log(data)
 
     let query =
     `SELECT DISTINCT NomeImpianto, descCarburante, prezzo, Indirizzo, Latitudine, Longitudine
@@ -21,12 +22,12 @@ exports.search = function(data, callback){
             callback(rows)
         });
     } else {
-            db.each(query, [], (err, rows) => {
-                if (err) throw err;
-                if (rows.Indirizzo.toLowerCase().includes(addr)) {
-                    callback(rows)
-                }
-            });
+        db.each(query, [], (err, rows) => {
+            if (err) throw err;
+            if (rows.Indirizzo.toLowerCase().includes(addr)) {
+                callback(rows)
+            }
+        });
     }
 
 

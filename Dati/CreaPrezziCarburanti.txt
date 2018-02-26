@@ -21,6 +21,6 @@ CREATE TABLE prezzo_alle_8(
 );
 .mode csv
 .separator ;
-.import /Users/marco/GitHub_Projects/DistributoriBot/Dati/anagrafica.csv anagrafica_impianti_attivi
-.import /Users/marco/GitHub_Projects/DistributoriBot/Dati/prezzo.csv prezzo_alle_8
+.import /Users/marco/GitHub_Projects/PrezziCarburanteBot/Dati/anagrafica.csv anagrafica_impianti_attivi
+.import /Users/marco/GitHub_Projects/PrezziCarburanteBot/Dati/prezzo.csv prezzo_alle_8
 .quit
