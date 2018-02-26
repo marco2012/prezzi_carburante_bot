@@ -6,6 +6,7 @@ exports.search = function(data, callback){
 
     let carburante = data[0]
     let citta = data[1]
+    let addr = (data[2]=='null') ? null : data[2].toLowerCase()
 
     let query =
     `SELECT DISTINCT NomeImpianto, descCarburante, prezzo, Indirizzo, Latitudine, Longitudine
@@ -14,10 +15,20 @@ exports.search = function(data, callback){
     ORDER BY prezzo ASC
     LIMIT 10`;
 
-    db.each(query, [], (err, rows) => {
-        if (err) throw err;
-        callback(rows)
-    });
+    if (addr==null){
+        db.each(query, [], (err, rows) => {
+            if (err) throw err;
+            callback(rows)
+        });
+    } else {
+            db.each(query, [], (err, rows) => {
+                if (err) throw err;
+                if (rows.Indirizzo.toLowerCase().includes(addr)) {
+                    callback(rows)
+                }
+            });
+    }
+
 
     // close the database connection
     db.close();
