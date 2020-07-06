@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #Remember to change this variable
-PROJ_PATH="/Users/marco/GitHub_Projects/PrezziCarburanteBot/Dati"
+PROJ_PATH="/Users/marco/Development/Projects/prezzi_carburante_bot/Dati"
 
 echo "*********>> Downloading prezzo_alle_8.csv file ..."
 echo " "
