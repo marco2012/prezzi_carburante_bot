@@ -1,3 +1,3 @@
-# prezzi_carburante_bot
-# prezzi_carburante_bot
-# prezzi_carburante_bot
+# Fuel Price bot
+
+### Telegram bot to find the prices of nearby gas stations
